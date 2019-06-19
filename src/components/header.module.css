@@ -1,0 +1,20 @@
+.header {
+  margin-bottom: 1.45rem;
+}
+
+.headerContent {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.navLink {
+  margin: 16px;
+  padding-bottom: 8px;
+}
+
+.navLink:hover {
+  border-bottom: 2px solid #333;
+}

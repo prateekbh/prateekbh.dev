@@ -1,0 +1,10 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: "Fira Sans", arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
