@@ -1,6 +1,8 @@
 .name {
   margin: 0px;
-  width: 80%;
+  max-width: none;
+  height: 15%;
+  max-height: 96px;
 }
 
 .phoenatics {
