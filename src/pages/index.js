@@ -14,7 +14,7 @@ const IndexPage = () => (
     <Profile about={
       <section>
         <p className={style.details}>
-          Hi! I am an front end engineer at Google working for the <a className={style.textLink} href='https://amp.dev/'>AMP/⚡️</a> project. At work I build UI components and Service worker libraries that provides its user a delightful base to build their modern web app upon. I am also a Preact core team member where I work on the <a className={style.textLink} href='https://github.com/preactjs/preact-cli'>preact-cli</a> building a meta framework for preact's users.
+          Hi! I am a front end engineer at Google working for the <a className={style.textLink} href='https://amp.dev/'>AMP/⚡️</a> project. At work I build UI components and Service worker libraries that provides its user a delightful base to build their modern web app upon. I am also a Preact core team member where I work on the <a className={style.textLink} href='https://github.com/preactjs/preact-cli'>preact-cli</a> building a meta framework for preact's users.
         </p>
 
         <p className={style.details}>
