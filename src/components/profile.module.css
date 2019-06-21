@@ -7,6 +7,8 @@
 
 .phoenatics {
   letter-spacing: 5px;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .details {
@@ -19,4 +21,10 @@
 
 .subtitle {
   font-weight: 300;
+}
+
+.social {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
 }
