@@ -6,10 +6,9 @@ import SEO from "../components/seo"
 
 const SecondPage = () => (
   <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <SEO title="Talks" />
+    <h1>These are the talks I am honoured to be a part of.</h1>
+    <h2>Supercharged PWAs with preact-cli</h2>
   </Layout>
 )
 
