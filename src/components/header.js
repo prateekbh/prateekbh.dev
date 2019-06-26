@@ -6,8 +6,8 @@ import style from './header.module.css';
 const Header = ({ siteTitle }) => (
   <header className={style.header}>
     <nav className={style.headerContent}>
-      <a className={style.navLink} href="#">Blog</a>
-      <a className={style.navLink} href="#">Talks</a>
+      <Link className={style.navLink} to='/blogs'>Blog</Link>
+      <Link className={style.navLink} to='/talks'>Talks</Link>
       <a className={style.navLink} href="#">Contact</a>
     </nav>
   </header>
