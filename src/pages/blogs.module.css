@@ -1,0 +1,22 @@
+.title {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.blogs {
+  max-width: 800px;
+}
+
+.blog {
+  margin-bottom: 40px;
+}
+
+.blogTitle {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.blogText {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}

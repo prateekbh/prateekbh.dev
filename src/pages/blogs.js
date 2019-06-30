@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link, graphql, StaticQuery } from "gatsby"
+import style from './blogs.module.css';
 
 const BlogRoll = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
@@ -9,19 +10,22 @@ const BlogRoll = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blogs" />
-      <h1>All the blogs</h1>
+      <h1 className={style.title}>All the blogs</h1>
+      <ul className={style.blogs}>
       {posts.map(({ node }) => {
         const { excerpt, id } = node;
         const {frontmatter: {date, title}} = node;
         return (
-          <Link to={`/blog/${id}`} key={id}>
-            <div>
-              <h2>- {title}</h2>
-              <span>{date}</span>
-            </div>
-          </Link>
+          <li className={style.blog}>
+            <Link to={`/blog/${id}`} key={id}>
+              <h2 className={style.blogTitle}>{title}</h2>
+              <div>{date}</div>
+              <div className={style.blogText}>{excerpt}</div>
+            </Link>
+          </li>
         );
       })}
+      </ul>
     </Layout>
   )
 }
