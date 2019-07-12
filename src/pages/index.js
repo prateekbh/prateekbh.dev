@@ -1,16 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Profile from "../components/profile";
-
+import Link from 'next/link';
+import Profile from '../components/profile';
 import './app.css';
 import style from './index.module.css';
+import Layout from '../layouts/main';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
     <Profile about={
       <section>
         <p className={style.details}>
@@ -18,11 +14,11 @@ const IndexPage = () => (
         </p>
 
         <p className={style.details}>
-          Before AMP, I worked with <a className={style.textLink} href='https://flipkart.com'>Flipkart</a> as a Senior UI engineer for their mobile web apps. Prior to Flipkart I worked briefly with <a className={style.textLink}href='https://fab.com'>Fab.com</a> for their e-commerce web app.
+          Before AMP, I worked with <a className={style.textLink} href='https://flipkart.com'>Flipkart</a> as a Senior UI engineer for their mobile web apps. Prior to Flipkart I worked briefly with <a className={style.textLink} href='https://fab.com'>Fab.com</a> for their e-commerce web app.
         </p>
 
         <p className={style.details}>
-          I also do bunch of other open source projects which you can find on my <a className={style.textLink} href='https://github.com/prateekbh'>Github page</a>. I <Link className={style.textLink} to="/talks">speak</Link> at some conferences every year about the cool OSS things that people might be interested in hearing.
+          I also do bunch of other open source projects which you can find on my <a className={style.textLink} href='https://github.com/prateekbh'>Github page</a>. I <Link href="/talks"><a className={style.textLink}>speak</a></Link> at some conferences every year about the cool OSS things that people might be interested in hearing.
         </p>
       </section>
     }/>

@@ -1,13 +1,12 @@
 import React from 'react';
 import style from './profile.module.css';
-import ProfileImage from "./images/profile-image";
-import nameImgSrc from '../images/name.png';
+// import ProfileImage from "./images/profile-image";
 
 export default ({about}) => {
   return (
     <div className={style.profileTile}>
       <div>
-          <ProfileImage className={style.profilePic}/>
+          <img alt="Prateek bhatnagar" className={style.profilePic} src='/static/images/profile.jpg'/>
           <a target='blank' href='https://github.com/prateekbh'>
             <svg viewBox="0 0 18 18" className={style.social}>
               <g>
@@ -24,7 +23,7 @@ export default ({about}) => {
           </a>
       </div>
       <div className={style.details}>
-        <img className={style.name} src={nameImgSrc}/>
+        <img className={style.name} src='/static/images/name.png'/>
         <div className={style.phoenatics}>[Pratëëk - Bhätnägär]</div>
         {about}
       </div>

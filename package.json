@@ -5,16 +5,8 @@
   "version": "0.1.0",
   "author": "Prateek Bhatnagar <prateek89born@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.9.6",
-    "gatsby-image": "^2.1.4",
-    "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-offline": "^2.1.3",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sharp": "^2.1.6",
-    "gatsby-source-filesystem": "^2.0.40",
-    "gatsby-transformer-remark": "^2.5.0",
-    "gatsby-transformer-sharp": "^2.1.21",
+    "@zeit/next-css": "^1.0.1",
+    "next": "^8.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -24,16 +16,15 @@
     "prettier": "^1.18.2"
   },
   "keywords": [
-    "gatsby"
+    "nextjs"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "dev": "next ./src",
+    "build": "next build ./src",
+    "export": "next export ./src",
+    "start": "next start",
+    "format": "prettier --write src/**/*.{js,jsx}"
   },
   "repository": {
     "type": "git",
