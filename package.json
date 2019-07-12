@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Prateek Bhatnagar <prateek89born@gmail.com>",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "next": "^8.1.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -19,8 +20,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
+    "dev": "next ./src",
+    "build": "next build ./src",
     "start": "next start",
     "format": "prettier --write src/**/*.{js,jsx}"
   },

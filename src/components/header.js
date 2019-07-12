@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import Link from "next/link"
 import PropTypes from "prop-types"
 import React from "react"
 import style from './header.module.css';
@@ -6,8 +6,8 @@ import style from './header.module.css';
 const Header = ({ siteTitle }) => (
   <header className={style.header}>
     <nav className={style.headerContent}>
-      <Link className={style.navLink} to='/blogs'>Blog</Link>
-      <Link className={style.navLink} to='/talks'>Talks</Link>
+      <Link href='/blogs'><a className={style.navLink}>Blog</a></Link>
+      <Link href='/talks'><a className={style.navLink}>Talks</a></Link>
       <a className={style.navLink} href="#">Contact</a>
     </nav>
   </header>
