@@ -37,10 +37,11 @@ const allBlogs = gql`query {
 const IndexPage = () => (
   <Layout>
     <Query query={allBlogs}>
-      {({ loading, error, data: {search: {edges}} }) => {
+      {({ loading, error, data }) => {
         if (loading || error) {
           return (<div></div>);
         }
+        const {search: {edges}} = data;
         const [{node: {object: {entries}}}] = edges;
         return (
           entries.map(({object: {text}, oid}) => {
