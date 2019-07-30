@@ -1,12 +1,12 @@
 // next.config.js
 const withCSS = require('@zeit/next-css')
+const { parsed: GH_TOKEN } = require('dotenv').config();
+const webpack = require('webpack');
+
 module.exports = withCSS({
   cssModules: true,
-  exportPathMap: function() {
-    return {
-      '/': { page: '/' },
-      '/blog/prateek': { page: '/blog', query: { name: 'Hello Prateek' } },
-      '/blog/megha': { page: '/blog', query: { name: 'Hello Megha' } },
-    };
+  webpack(config) {
+    config.plugins.push(new webpack.EnvironmentPlugin(GH_TOKEN))
+    return config
   }
 })
