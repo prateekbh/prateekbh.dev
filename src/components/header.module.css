@@ -7,13 +7,24 @@
   margin: 0 auto;
   padding: 4rem 2rem;
   text-transform: uppercase;
-  text-align: right;
+  display: flex;
+}
+
+.headerLogo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
 }
 
 .navLink {
   margin: 16px;
-  padding-bottom: 8px;
   line-height: 2.5rem;
+  border-bottom: 2px solid transparent;
 }
 
 .navLink:hover {
