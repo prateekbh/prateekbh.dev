@@ -9,7 +9,7 @@ const Header = withRouter(({ siteTitle, router:{pathname} }) => (
   <header className={style.header}>
     <nav className={style.headerContent}>
       <div className={style.headerLogo}>
-        {pathname!=='/' && <Link href='/'><a><img src='/static/images/name.png' height="35"/></a></Link>}
+        {pathname!=='/' && <Link href='/'><a><img className={style.logo} src='/static/images/name.png' height="35"/></a></Link>}
       </div>
       <div className={style.headerLinks}>
         <Link href='/blogs'><a className={style.navLink}>Blog</a></Link>
