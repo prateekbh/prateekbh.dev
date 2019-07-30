@@ -15,7 +15,7 @@ function create (initialState) {
       // Use fetch() polyfill on the server
       fetch: !isBrowser && fetch,
       headers: {
-        authorization: "Bearer f9dcaebe5502d59250aaf41737bf75217af7bc5e",
+        authorization: "Bearer 2f80dd6d5aeec9e3297402f05490c05a599ac931",
       }
     }),
     cache: new InMemoryCache().restore(initialState || {})
