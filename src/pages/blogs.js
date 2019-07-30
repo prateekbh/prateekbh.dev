@@ -38,8 +38,10 @@ const IndexPage = () => (
   <Layout>
     <Query query={allBlogs}>
       {({ loading, error, data: {search: {edges}} }) => {
+        if (!data) {
+          return (<div></div>);
+        }
         const [{node: {object: {entries}}}] = edges;
-        console.log(entries)
         return (
           entries.map(({object: {text}, oid}) => {
             const {title, thumbnail} = getMetadata(text);
