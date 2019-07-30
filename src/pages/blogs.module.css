@@ -1,22 +1,25 @@
-.title {
-  font-size: 4rem;
-  font-weight: 500;
-}
-
-.blogs {
-  max-width: 800px;
-}
-
-.blog {
-  margin-bottom: 40px;
-}
-
-.blogTitle {
+.blogLink {
+  text-transform: capitalize;
   font-size: 3rem;
-  font-weight: 300;
+  display: flex;
+  width: 800px;
+  margin-bottom: 64px;
 }
 
-.blogText {
+.blogPreview{
   font-size: 1.5rem;
-  line-height: 2rem;
+  font-weight: 100;
+  margin-top: 8px;
+  color: #666;
+}
+
+.blogDetails {
+  flex: 1;
+}
+
+.blogThumbnail {
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  border-radius: 3px;
 }

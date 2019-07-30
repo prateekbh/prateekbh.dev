@@ -13,7 +13,13 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "apollo-boost": "^0.4.3",
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "prettier": "^1.18.2",
+    "react-apollo": "^2.5.8"
   },
   "keywords": [
     "nextjs"
