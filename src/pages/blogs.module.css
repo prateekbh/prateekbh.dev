@@ -3,7 +3,7 @@
   font-size: 3rem;
   display: flex;
   width: 800px;
-  margin-bottom: 64px;
+  margin: 64px auto;
 }
 
 .blogPreview{
