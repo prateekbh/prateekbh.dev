@@ -38,7 +38,7 @@ const IndexPage = () => (
   <Layout>
     <Query query={allBlogs}>
       {({ loading, error, data: {search: {edges}} }) => {
-        if (!data) {
+        if (loading || error) {
           return (<div></div>);
         }
         const [{node: {object: {entries}}}] = edges;
