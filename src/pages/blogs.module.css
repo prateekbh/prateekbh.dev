@@ -6,10 +6,15 @@
   margin: 64px auto;
 }
 
-.blogPreview{
+.date {
   font-size: 1.5rem;
   font-weight: 100;
-  margin: 16px;
+  color: #aaa;
+}
+
+.blogPreview{
+  font-size: 1.5rem;
+  margin: 16px 16px 16px 0;
   color: #666;
 }
 

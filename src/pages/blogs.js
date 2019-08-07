@@ -45,13 +45,14 @@ const IndexPage = () => (
         const [{node: {object: {entries}}}] = edges;
         return (
           entries.map(({object: {text}, oid}) => {
-            const {title, thumbnail} = getMetadata(text);
+            const {title, date, thumbnail} = getMetadata(text);
             const previewData = getMetadata(text);
             return (
               <Link key={oid} href={`/blog/${oid}`} >
                 <a className={style.blogLink}>
                   <div className={style.blogDetails}>
                     <div>{title}</div>
+                    <div className={style.date}>{date}</div>
                     <div className={style.blogPreview}>{getPreviewText(text)}</div>
                   </div>
 
