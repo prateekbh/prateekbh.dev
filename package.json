@@ -1,43 +1,47 @@
 {
-  "name": "prateekbh.dev",
   "private": true,
-  "description": "https://prateekbh.dev",
-  "version": "0.1.0",
-  "author": "Prateek Bhatnagar <prateek89born@gmail.com>",
-  "dependencies": {
-    "@zeit/next-css": "^1.0.1",
-    "next": "^8.1.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
-  },
-  "devDependencies": {
-    "apollo-boost": "^0.4.3",
-    "dotenv": "^8.0.0",
-    "graphql": "^14.4.2",
-    "graphql-tag": "^2.10.1",
-    "isomorphic-fetch": "^2.2.1",
-    "isomorphic-unfetch": "^3.0.0",
-    "prettier": "^1.18.2",
-    "react-apollo": "^2.5.8"
-  },
-  "keywords": [
-    "nextjs"
-  ],
+  "name": "myblog",
+  "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "next ./src",
-    "build": "next build ./src",
-    "export": "next export ./src",
-    "start": "next start",
-    "format": "prettier --write src/**/*.{js,jsx}"
+    "start": "per-env",
+    "start:production": "npm run -s serve",
+    "start:development": "npm run -s dev",
+    "build": "preact build --prerenderUrls ./prerender-urls.js",
+    "dev": "preact watch --prerenderUrls ./prerender-urls.js",
+    "lint": "eslint src",
+    "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "eslintConfig": {
+    "extends": "eslint-config-synacor"
   },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-synacor": "^2.0.2",
+    "esm": "^3.2.25",
+    "glob": "^7.1.4",
+    "jest": "^21.2.1",
+    "jest-preset-preact": "^1.0.0",
+    "markdown": "^0.5.0",
+    "per-env": "^1.0.2",
+    "preact-cli": "^3.0.0-rc.6",
+    "preact-render-spy": "^1.2.1",
+    "webpack-bundle-analyzer": "^3.4.1"
+  },
+  "dependencies": {
+    "@preact/prerender-data-provider": "^0.0.1",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "markdown-to-jsx": "^6.10.3",
+    "preact": "^10.0.0",
+    "preact-cli-plugin-netlify": "^1.5.0",
+    "preact-render-to-string": "^5.0.6",
+    "preact-router": "^3.0.1"
+  },
+  "jest": {
+    "preset": "jest-preset-preact"
   }
 }
