@@ -14,6 +14,7 @@
 		<% if(htmlWebpackPlugin.options.seo && 'subtitle' in htmlWebpackPlugin.options.seo) {%>
 			<meta property="og:description" content="<%= htmlWebpackPlugin.options.seo.subtitle %>" />
 			<meta property="twitter:description" content="<%= htmlWebpackPlugin.options.seo.subtitle %>" />
+			<meta property="description" content="<%= htmlWebpackPlugin.options.seo.subtitle %>" />
 		<% } %>
 		<% preact.headEnd %>
 	</head>
