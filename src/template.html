@@ -7,7 +7,12 @@
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>" />
-		<meta property="og:image" content="<%= htmlWebpackPlugin.options.cover %>" />
+		<% if(htmlWebpackPlugin.options.seo && 'cover' in htmlWebpackPlugin.options.seo) {%>
+			<meta property="og:image" content="<%= htmlWebpackPlugin.options.seo.cover %>" />
+		<% } %>
+		<% if(htmlWebpackPlugin.options.seo && 'subtitle' in htmlWebpackPlugin.options.seo) {%>
+			<meta property="og:description" content="<%= htmlWebpackPlugin.options.seo.subtitle %>" />
+		<% } %>
 		<% preact.headEnd %>
 	</head>
 	<body>

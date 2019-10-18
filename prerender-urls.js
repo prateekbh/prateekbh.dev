@@ -5,7 +5,12 @@ const fs = require('fs');
 const [blogs] = generateFileList(join(__dirname, 'content')).nodes;
 module.exports = () => {
 	const pages = [
-		{ url: '/' },
+		{
+			url: '/',
+			seo: {
+				cover: '/assets/profile.jpg'
+			}
+		},
 		{ url: '/contact/' },
 		{ url: '/contact/success' }
 	];
@@ -21,8 +26,7 @@ module.exports = () => {
 		const data = fs.readFileSync(join('content', 'blog', blog.id), 'utf-8').replace(/---(.*\n)*---/, '');
 		return {
 			url: `/blog/${blog.id}`,
-			title: blog.details.title,
-			cover: blog.details.cover,
+			seo: blog.details,
 			data: {
 				details: blog.details,
 				content: data
