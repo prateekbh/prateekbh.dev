@@ -16,7 +16,7 @@
 		<% } %>
 		<meta name="twitter:card" content="<%= (htmlWebpackPlugin.options.seo && 'cover' in htmlWebpackPlugin.options.seo) ? 'summary_large_image' : 'summary'%>" />
 		<% if(htmlWebpackPlugin.options.seo && 'cover' in htmlWebpackPlugin.options.seo) {%>
-			<meta name="twitter:image" content="<%= htmlWebpackPlugin.options.seo.cover %>">
+			<meta name="twitter:image" content="https://prateekbh.dev<%= htmlWebpackPlugin.options.seo.cover %>">
 		<% } %>
 		<% if(htmlWebpackPlugin.options.seo && 'subtitle' in htmlWebpackPlugin.options.seo) {%>
 			<meta property="twitter:description" content="<%= htmlWebpackPlugin.options.seo.subtitle %>" />
