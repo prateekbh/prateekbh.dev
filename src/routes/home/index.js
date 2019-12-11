@@ -5,15 +5,17 @@ const Home = () => (
 	<div class={style.home}>
 		<div class={style.about}>
 			<div class={style.imageContainer}>
-				<div class={style.image} />
+				<img class={style.image} src="/assets/profile.jpg" />
 			</div>
 			<div class={style.quote}>
 				<div class={style.details}>
-					Jane presents traditional spanish art with a modern twist. Her work is
-					excellent quality, her technique is brilliant and her love of the
-					subject matter shines through.
+					Hey 👋🏻! I am Prateek Bhatnagar.
+					<p>Engineer on Google chrome team by the day and @preactjs core team member by the night.</p>
+					<p>
+						Previously, I was a part of Google AMP project and Flipkart's Mobile web team where I worked with the respective project's performance tasks and create developer solutions to provide well lit solutions to developer.
+					</p>
+					<p> I contribute to some open source projects including preact-cli, workbox, google chrome's critter library and more.</p>
 				</div>
-				<div class={style.author}>- The Local Newspaper</div>
 			</div>
 		</div>
 		<div class={style.bio}>

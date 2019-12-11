@@ -8,34 +8,24 @@
 }
 
 .imageContainer {
-  flex: 1;
+	flex: 1;
+	justify-items: center;
 }
 
 .image {
 	height: 30vw;
-	background-image: url(/assets/profile.jpg);
-	background-size: cover;
-	background-position: center;
+	max-height: 500px;
 }
 
 .quote {
   flex: 1;
 	display: flex;
 	flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url("/assets/quotes.svg");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .details{
-	font-family: serif;
-	font-size: 32px;
-	font-style: italic;
-	padding-left: 32px;
-	text-align: center;
-	color: gray;
+	font-size: 22px;
+	color: #333;
 	padding-bottom: 32px;
 }
 
