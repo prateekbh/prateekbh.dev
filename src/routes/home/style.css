@@ -34,22 +34,15 @@
   color: black;
 }
 
-.bio{
-	margin: 40px auto;
-	display:flex;
-	justify-content: center;
+.social {
+	font-size: 18px;
+	text-align: center;
+	margin-top: 64px;
 }
 
-.bioleft, .bioright{
-	max-width: 25%;
-	text-align: justify;
-}
-
-.bioleft{
-	padding-right: 16px;
-}
-
-.bioright{
+.icon {
+	height: 24px;
+	vertical-align: middle;
 	padding-left: 16px;
 }
 
@@ -70,12 +63,6 @@
 	.image {
 		height: 50vw;
 		width: 100%;
-	}
-
-	.bioleft, .bioright{
-		max-width: 100%;
-		text-align: justify;
-		padding: 0;
 	}
 }
 
