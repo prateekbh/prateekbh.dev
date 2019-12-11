@@ -9,7 +9,7 @@
 
 .imageContainer {
 	flex: 1;
-	justify-items: center;
+	text-align: center;
 }
 
 .image {
