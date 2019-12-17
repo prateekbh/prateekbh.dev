@@ -9,7 +9,8 @@
 
 .imageContainer {
 	flex: 1;
-	text-align: center;
+	display: flex;
+	justify-content: center;
 }
 
 .image {
@@ -56,13 +57,14 @@
 	}
 
 	.details {
+		margin-top: 32px;
 		padding: 16px 0 0 0;
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 
 	.image {
-		height: 50vw;
-		width: 100%;
+		height: 80vw;
+		max-height: 400px;
 	}
 }
 

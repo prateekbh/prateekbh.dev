@@ -58,8 +58,12 @@
 }
 
 @media all and (max-width: 728px) {
+
 	.header h1{
 		font-size: 2rem;
+		overflow: hidden;
+		width: 130px;
+		height: 80px;
 	}
   .header nav a{
 		line-height: 100px;
