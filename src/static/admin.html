@@ -16,7 +16,7 @@
       render: function() {
         const {entry} = this.props;
         const image = entry.getIn(['data', 'cover'])
-        const imageMarkup = `<div><img src='${cover.toString()}'></div>`
+        const imageMarkup = `<div><img src='${image.toString()}'></div>`
         return (
           html`
             <div>
