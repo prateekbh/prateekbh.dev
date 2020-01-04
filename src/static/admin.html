@@ -10,7 +10,17 @@
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   <script>
+    import { html, render } from 'https://unpkg.com/htm/preact/standalone.module.js'
+    var PostPreview = createClass({
+      render: function(props) {
+        console.log(props);
+        return (
+          html`<h1>Your preview here</h1>`
+        );
+      }
+    });
     CMS.registerPreviewStyle("/preview.css");
+    CMS.registerPreviewTemplate("posts", PostPreview);
   </script>
 </body>
 </html>
