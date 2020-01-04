@@ -13,12 +13,13 @@
     import htm from 'https://unpkg.com/htm?module'
     const html = htm.bind(h);
     const PostPreview = createClass({
-      render: function(props) {
-        console.log({props});
+      render: function() {
+        const {entry} = this.props;
+        console.log({entry});
         return (
           html`
             <div>
-              <h1>{entry.getIn(['data', 'title'])}</h1>
+              <h1>${entry.getIn(['data', 'title'])}</h1>
             </div>
           `
         );
