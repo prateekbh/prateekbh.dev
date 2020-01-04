@@ -15,11 +15,14 @@
     const PostPreview = createClass({
       render: function() {
         const {entry} = this.props;
-        console.log({entry});
+        const image = entry.getIn(['data', 'cover'])
+        const imageMarkup = `<div><img src='${cover.toString()}'></div>`
         return (
           html`
             <div>
               <h1>${entry.getIn(['data', 'title'])}</h1>
+              <caption>${entry.getIn(['data', 'subtitle'])}</caption>
+              ${image ? imageMarkup : ''}
             </div>
           `
         );
