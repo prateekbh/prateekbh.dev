@@ -15,6 +15,7 @@
     const html = htm.bind(h);
     const PostPreview = createClass({
       componentDidMount: function() {
+        console.log(document.querySelectorAll('pre code'));
         document.querySelectorAll('pre code').forEach(block => {
           console.log({block}, hljs.highlightBlock);
           hljs.highlightBlock(block);
