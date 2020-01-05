@@ -14,15 +14,6 @@
     import htm from 'https://unpkg.com/htm?module'
     const html = htm.bind(h);
     const PostPreview = createClass({
-      componentDidMount: function() {
-        document.addEventListener('DOMContentLoaded', (event) => {
-          console.log(document.querySelectorAll('pre code'));
-          document.querySelectorAll('pre code').forEach(block => {
-            console.log({block}, hljs.highlightBlock);
-            hljs.highlightBlock(block);
-          });
-        });
-      },
       render: function() {
         const {entry, widgetFor} = this.props;
         const image = entry.getIn(['data', 'cover'])
@@ -40,7 +31,6 @@
       }
     });
     CMS.registerPreviewStyle("/preview.css");
-    CMS.registerPreviewStyle("//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css");
     CMS.registerPreviewTemplate("pages", PostPreview);
   </script>
 </body>
