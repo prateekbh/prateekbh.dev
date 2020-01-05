@@ -1,15 +1,16 @@
 html {
   font-family: Helvetica Neue,arial,sans-serif;
+  color: #333;
 }
 
-h1 {
+.blogTitle {
   font-size: 2.2rem;
   font-weight: 400;
   margin-bottom: 8px;
   line-height: 1;
 }
 
-.css-yilgkd-WidgetPreviewContainer{
+.blogSubTitle{
   color: #aaa;
   display: block;
   text-align: left;
