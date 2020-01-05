@@ -14,9 +14,9 @@
     import htm from 'https://unpkg.com/htm?module'
     const html = htm.bind(h);
     const PostPreview = createClass({
-      componentDidMount() {
+      componentDidMount: function() {
         console.log({hljs});
-      }
+      },
       render: function() {
         const {entry, widgetFor} = this.props;
         const image = entry.getIn(['data', 'cover'])
