@@ -20,7 +20,13 @@
   max-width: 100%;
 }
 
+.blogbody a {
+  color: #000;
+  text-decoration: underline;
+}
+
 .blogbody code {
+  display: block;
   max-width: 100%;
 }
 
