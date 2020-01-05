@@ -16,6 +16,7 @@
     const PostPreview = createClass({
       componentDidMount: function() {
         document.querySelectorAll('pre code').forEach(block => {
+          console.log({block}, hljs.highlightBlock);
           hljs.highlightBlock(block);
         });
       },
