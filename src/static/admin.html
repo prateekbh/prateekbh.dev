@@ -15,6 +15,7 @@
     const html = htm.bind(h);
     const PostPreview = createClass({
       componentDidMount: function() {
+        console.log(this.blog);
         console.log(document.querySelectorAll('pre code'));
         document.querySelectorAll('pre code').forEach(block => {
           console.log({block}, hljs.highlightBlock);
@@ -27,7 +28,7 @@
         const imageMarkup = html`<div><img src='${image.toString()}'/></div>`
         return (
           html`
-            <div>
+            <div ref={blog => this.blog = blog}>
               <h1 className='blogTitle'>${entry.getIn(['data', 'title'])}</h1>
               <caption className='blogSubTitle'>${entry.getIn(['data', 'subtitle'])}</caption>
               ${image ? imageMarkup : ''}
