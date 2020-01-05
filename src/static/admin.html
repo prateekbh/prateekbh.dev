@@ -15,11 +15,12 @@
     const html = htm.bind(h);
     const PostPreview = createClass({
       componentDidMount: function() {
-        console.log(this.blog);
-        console.log(document.querySelectorAll('pre code'));
-        document.querySelectorAll('pre code').forEach(block => {
-          console.log({block}, hljs.highlightBlock);
-          hljs.highlightBlock(block);
+        document.addEventListener('DOMContentLoaded', (event) => {
+          console.log(document.querySelectorAll('pre code'));
+          document.querySelectorAll('pre code').forEach(block => {
+            console.log({block}, hljs.highlightBlock);
+            hljs.highlightBlock(block);
+          });
         });
       },
       render: function() {
@@ -28,7 +29,7 @@
         const imageMarkup = html`<div><img src='${image.toString()}'/></div>`
         return (
           html`
-            <div ref={blog => this.blog = blog}>
+            <div>
               <h1 className='blogTitle'>${entry.getIn(['data', 'title'])}</h1>
               <caption className='blogSubTitle'>${entry.getIn(['data', 'subtitle'])}</caption>
               ${image ? imageMarkup : ''}
