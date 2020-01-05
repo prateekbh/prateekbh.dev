@@ -9,6 +9,7 @@
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
   <script type="module">
     import htm from 'https://unpkg.com/htm?module'
     const html = htm.bind(h);
@@ -30,6 +31,7 @@
       }
     });
     CMS.registerPreviewStyle("/preview.css");
+    CMS.registerPreviewStyle("//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css");
     CMS.registerPreviewTemplate("pages", PostPreview);
   </script>
 </body>
