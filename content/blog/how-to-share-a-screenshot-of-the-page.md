@@ -7,6 +7,7 @@ tags: 'technology, javascript'
 ---
 ## How you doing?
 Here's how to take a screenshot
+
 ```js
 const x = 10;
 alert(x);

@@ -1,20 +1,13 @@
 import { h } from 'preact';
-import { useEffect } from 'preact/hooks';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import Markdown from 'markdown-to-jsx';
-import hljs from 'highlight.js/lib/highlight';
-import ts from 'highlight.js/lib/languages/typescript';
-import javascript from 'highlight.js/lib/languages/javascript';
-import html from 'highlight.js/lib/languages/htmlbars';
-import css from 'highlight.js/lib/languages/css';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
 
-hljs.registerLanguage('javascript', javascript);
-hljs.registerLanguage('typescript', ts);
-hljs.registerLanguage('html', html);
-hljs.registerLanguage('css', css);
+SyntaxHighlighter.registerLanguage('javascript', js);
 
 import style from './style';
-import 'highlight.js/styles/github.css';
+import { ghcolors } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const blogs = (props) => {
 	const [data, isLoading] = usePrerenderData(props);
@@ -26,21 +19,29 @@ const blogs = (props) => {
 };
 
 function CodeBlock(props) {
-	return <pre><code>{props.children}</code></pre>
+	let language;
+	switch (props.class) {
+		case 'lang-js':
+			language = 'javascript';
+			break;
+		case 'lang-html':
+			language = 'html';
+			break;
+		case 'lang-css':
+			language = 'css';
+			break;
+		case 'lang-ts':
+			language = 'typescript';
+			break;
+	}
+	return (
+		<SyntaxHighlighter language={language} style={ghcolors}>
+			{props.children}
+		</SyntaxHighlighter>
+	);
 }
 
 function getBlogBody(data, isLoading) {
-	let blogDiv;
-	useEffect(() => {
-		if (blogDiv) {
-			//hljs.configure({ useBR: true });
-			setTimeout(() => {
-				blogDiv.querySelectorAll('code').forEach((block) => {
-					hljs.highlightBlock(block);
-				});
-			}, 100);
-		}
-	}, []);
 
 
 	if (isLoading) {
@@ -64,14 +65,15 @@ function getBlogBody(data, isLoading) {
 				<h1 class={style.blogtitle}>{details.title}</h1>
 				{ details.subtitle && <caption class={style.blogsubtitle}>{details.subtitle}</caption> }
 				{ details.cover && <div class={style.blogcover} style={`background-image:url(${details.cover})`} /> }
-				<div class={style.blogbody} ref={c => blogDiv = c}>
+				<div class={style.blogbody}>
 					<Markdown options={{
-            overrides: {
-                code: {
-                    component: CodeBlock,
-                },
-            },
-        }}>{ content }</Markdown>
+						overrides: {
+							code: {
+								component: CodeBlock
+							}
+						}
+					}}
+					>{ content }</Markdown>
 				</div>
 			</div>
 		);
