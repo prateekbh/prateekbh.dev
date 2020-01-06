@@ -17,13 +17,16 @@
       render: function() {
         const {entry, widgetFor} = this.props;
         const image = entry.getIn(['data', 'cover'])
-        const imageMarkup = html`<div><img src='${image.toString()}'/></div>`
+        let imageMarkup = '';
+        if (image) {
+          imageMarkup = html`<div><img src='${image.toString()}'/></div>`;
+        }
         return (
           html`
             <div>
               <h1 className='blogTitle'>${entry.getIn(['data', 'title'])}</h1>
               <caption className='blogSubTitle'>${entry.getIn(['data', 'subtitle'])}</caption>
-              ${image ? imageMarkup : ''}
+              ${imageMarkup}
               <div className='text'>${widgetFor('body')}</div>
             </div>
           `
