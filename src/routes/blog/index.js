@@ -1,13 +1,10 @@
 import { h } from 'preact';
+import { Suspense } from 'preact/compat';
 import { usePrerenderData } from '@preact/prerender-data-provider';
 import Markdown from 'markdown-to-jsx';
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import js from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
-
-SyntaxHighlighter.registerLanguage('javascript', js);
+import { FormattedCodeBlock } from './formatted-code-block';
 
 import style from './style';
-import { ghcolors } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const blogs = (props) => {
 	const [data, isLoading] = usePrerenderData(props);
@@ -19,31 +16,17 @@ const blogs = (props) => {
 };
 
 function CodeBlock(props) {
-	let language;
-	switch (props.class) {
-		case 'lang-js':
-			language = 'javascript';
-			break;
-		case 'lang-html':
-			language = 'html';
-			break;
-		case 'lang-css':
-			language = 'css';
-			break;
-		case 'lang-ts':
-			language = 'typescript';
-			break;
+	if (typeof window === "undefined") {
+		return (<pre><code>{props.children}</code></pre>);
 	}
 	return (
-		<SyntaxHighlighter language={language} style={ghcolors}>
-			{props.children}
-		</SyntaxHighlighter>
+		<Suspense fallback={<pre><code>{props.children}</code></pre>}>
+			<FormattedCodeBlock {...props} />
+		</Suspense>
 	);
 }
 
 function getBlogBody(data, isLoading) {
-
-
 	if (isLoading) {
 		return (
 			<div class={style.loadingPlaceholder}>
@@ -70,7 +53,8 @@ function getBlogBody(data, isLoading) {
 						overrides: {
 							code: {
 								component: CodeBlock
-							}
+							},
+
 						}
 					}}
 					>{ content }</Markdown>
