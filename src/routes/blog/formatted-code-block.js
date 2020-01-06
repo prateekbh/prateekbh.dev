@@ -19,12 +19,15 @@ export function FormattedCodeBlock(props) {
 				break;
 			case 'lang-html':
 				language = 'html';
+				languageSyntax = import('react-syntax-highlighter/dist/esm/languages/prism/markup');
 				break;
 			case 'lang-css':
 				language = 'css';
+				languageSyntax = import('react-syntax-highlighter/dist/esm/languages/prism/css');
 				break;
 			case 'lang-ts':
 				language = 'typescript';
+				languageSyntax = import('react-syntax-highlighter/dist/esm/languages/prism/typescript');
 				break;
 		}
 		Promise.all([highlighter, languageSyntax]).then(values => {

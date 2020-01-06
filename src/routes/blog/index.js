@@ -17,7 +17,7 @@ const blogs = (props) => {
 
 function CodeBlock(props) {
 	const fallback = <pre><code>{props.children}</code></pre>;
-	if (typeof window === "undefined") {
+	if (typeof window === 'undefined') {
 		return (fallback);
 	}
 	return (
