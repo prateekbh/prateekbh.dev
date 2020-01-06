@@ -16,11 +16,12 @@ const blogs = (props) => {
 };
 
 function CodeBlock(props) {
+	const fallback = <pre><code>{props.children}</code></pre>;
 	if (typeof window === "undefined") {
-		return (<pre><code>{props.children}</code></pre>);
+		return (fallback);
 	}
 	return (
-		<Suspense fallback={<pre><code>{props.children}</code></pre>}>
+		<Suspense fallback={fallback}>
 			<FormattedCodeBlock {...props} />
 		</Suspense>
 	);
