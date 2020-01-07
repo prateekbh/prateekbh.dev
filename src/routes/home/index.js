@@ -20,10 +20,10 @@ const Home = () => (
 		</div>
 		<section class={style.social}>
 			<span>Get in touch</span>
-			<img class={style.icon} src='/assets/twitter.png' />
-			<img class={style.icon} src='/assets/github.png' />
-			<img class={style.icon} src='/assets/instagram.png' />
-			<img class={style.icon} src='/assets/linkedin.png' />
+			<a href="https://twitter.com/_prateekbh/"><img class={style.icon} src="/assets/twitter.png" /></a>
+			<a href="https://github.com/prateekbh/"><img class={style.icon} src="/assets/github.png" /></a>
+			<a href="https://instagram.com/_prateekbh/"><img class={style.icon} src="/assets/instagram.png" /></a>
+			<a href="https://www.linkedin.com/in/prateek-bh/"><img class={style.icon} src="/assets/linkedin.png" /></a>
 		</section>
 	</div>
 );
