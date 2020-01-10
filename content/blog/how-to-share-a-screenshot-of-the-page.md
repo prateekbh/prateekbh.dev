@@ -13,8 +13,8 @@ You can start this by going to <https://www.netlifycms.org/docs/start-with-a-tem
 
 It comes pre-setup with CSS modules/preact-router/markdown capabilities/ and seamless integration with Netlify CMS. I was extremely pleased with the results. The build/ delivery chain was extremely fast and sturdy thanks to @Netlify and my pages were really light weight thanks to Preact ❣️.
 
-For demo purposes I added some dummy blogs in the scaffolding repository with `lipsum` text and cloned the same for my this website. 
+For demo purposes I added some dummy blogs in the scaffolding repository with `lipsum` text and cloned the same for my this website.
 
 The thing that annoyed me the most was my preview while writing a blog. TBH I am used to write on medium and of all things that site beautiful as anything while my writing experience looked like this
 
-![ugly writing experience](/assets/Screen Shot 2020-01-09 at 5.12.36 PM.png "My writing experience without custom previews")
+![ugly writing experience](/assets/ugly-screenshot.png "My writing experience without custom previews")
