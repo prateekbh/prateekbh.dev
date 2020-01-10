@@ -1,26 +1,10 @@
 ---
-title: How to share a screenshot of the page
-date: 2019-09-07T05:42:28.441Z
+title: Friendly custom previews for Netlify CMS
+date: 2020-01-09T06:42:28.441Z
 subtitle: >-
-  If you have ever built an application which needs to take a screenshot of
-  itself, then this blog tells you how to do the same for web.
-cover: /assets/cody-black-nm89mzvar5i-unsplash.jpg
-tags: 'technology, javascript'
+  This blog describes the process I followed for creating the custom preview for
+  my Netlify CMS blog preview.
+cover: /assets/luca-laurence-ZrqrP9Xs2vI-unsplash.jpg
+tags: 'technology, javascript, netlify'
 ---
-## How you doing?
-Here's how to take a screenshot
-
-```html
-<html>
-  <head>...</head>
-  <body>...</body>
-</html>
-```
-
-```css
-.blah {
-  color: red;
-}
-```
-
-[hello](https://google.com)
+Hi
