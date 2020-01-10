@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from '@preact/prerender-data-provider';
 import Header from './header';
+import GAnalytics from 'ganalytics';
 
 // Code-splitting is automated for routes
 import Home from '../routes/home';
@@ -18,7 +19,17 @@ export default class App extends Component {
 	 */
 	handleRoute = e => {
 		this.currentUrl = e.url;
+		if (typeof window !== 'undefined') {
+			window.ga.send('pageview');
+		}
 	};
+
+	constructor() {
+		super();
+		if (typeof window !== 'undefined') {
+			window.ga = new GAnalytics('UA-91863394-2', { aid: 1 });
+		}
+	}
 
 	render(props) {
 		return (

@@ -4748,6 +4748,11 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
+ganalytics@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/ganalytics/-/ganalytics-3.1.2.tgz#a51685109bff92cb448042af7206396ed786c3e5"
+  integrity sha512-+v7cGYFyte8cNtakkBKCBL7M6fQdAXZumghAryLHztJ08jG6bFEfidfOcMQErAe8sLsekboyavKH5tF9MaDT1Q==
+
 gauge@~2.7.3:
   version "2.7.4"
   resolved "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
