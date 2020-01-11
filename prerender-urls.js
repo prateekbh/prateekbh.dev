@@ -1,6 +1,7 @@
 const { generateFileList } = require('./src/crawler');
 const { join } = require('path');
 const fs = require('fs');
+const parseMD = require('parse-md').default;
 
 const [blogs] = generateFileList(join(__dirname, 'content')).nodes;
 module.exports = () => {
@@ -23,13 +24,13 @@ module.exports = () => {
 
 	// adding all blog pages
 	pages.push(...blogs.edges.map(blog => {
-		const data = fs.readFileSync(join('content', 'blog', blog.id), 'utf-8').replace(/---(.*(\r)?\n)*---/, '');
+		const { content } = parseMD(fs.readFileSync(join('content', 'blog', blog.id), 'utf-8'));
 		return {
 			url: `/blog/${blog.id}`,
 			seo: blog.details,
 			data: {
 				details: blog.details,
-				content: data
+				content
 			}
 		};
 	}));

@@ -2,13 +2,33 @@ const fs = require('fs');
 const { join, sep } = require('path');
 const parseMD = require('parse-md').default;
 
-function getDetails(data) {
-	const { metadata } = parseMD(data);
-	return metadata;
+function getExtensionFromFilename(fileName) {
+	return fileName.substr(fileName.lastIndexOf('.') + 1);
+}
+
+function getDetails(format, data) {
+	const formatNormalised = format.toLowerCase();
+
+	switch (formatNormalised) {
+		case 'md':
+		case 'markdown': {
+			const { metadata } = parseMD(data);
+			return metadata;
+		}
+
+		case 'json': {
+			return JSON.parse(data);
+		}
+
+		default: {
+			console.error('File format not recognised');
+		}
+	}
 }
 
 function getPreview(data) {
-	let preview = data.replace(/---(.*(\r)?\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/(\r)?\n/,'');
+	const { content } = parseMD(data);
+	let preview = content.replace(/---(.*(\r)?\n)*---/, '').replace(/\[.*\]\(.*\)/g, '').replace(/(\r)?\n/,'');
 	preview = preview.substr(0, (preview.indexOf('\n') -1));
 	return preview.length < 500? preview : preview.substr(0, 500);
 }
@@ -21,11 +41,12 @@ function getFolders(source) {
 	let allContent = getAllListings(source);
 	const edges = allContent.filter(isFile).map(file => {
 		const data = fs.readFileSync(file, 'utf-8');
-		// console.log('get folders', JSON.stringify(data))
+		const id = file.substr(file.lastIndexOf(sep) + 1);
+		const format = getExtensionFromFilename(id);
 		return {
-			id: file.substr(file.lastIndexOf(sep) + 1),
+			id,
 			path: file,
-			details: getDetails(data),
+			details: getDetails(format, data),
 			preview: getPreview(data)
 		};
 	});
