@@ -45,6 +45,7 @@ function getFolders(source) {
 		const format = getExtensionFromFilename(id);
 		return {
 			id,
+			format,
 			path: file,
 			details: getDetails(format, data),
 			preview: getPreview(data)
