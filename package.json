@@ -19,6 +19,7 @@
     "build/*"
   ],
   "devDependencies": {
+    "dateformat": "^3.0.3",
     "eslint": "^4.9.0",
     "eslint-config-synacor": "^2.0.2",
     "esm": "^3.2.25",

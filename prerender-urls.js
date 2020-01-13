@@ -3,6 +3,7 @@ const { join } = require('path');
 const fs = require('fs');
 const parseMD = require('parse-md').default;
 const readingTime = require('reading-time');
+const dateFormat = require('dateformat');
 
 const [blogs] = generateFileList(join(__dirname, 'content')).nodes;
 module.exports = () => {
@@ -34,6 +35,7 @@ module.exports = () => {
 		}
 
 		const { text } = readingTime(data);
+		blog.details['pretty-date'] = dateFormat(new Date(blog.details.date), 'mmmm dS, yy');
 		blog.details['read-time'] = text;
 
 		return {

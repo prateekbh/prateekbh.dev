@@ -71,7 +71,7 @@ code.inline {
 }
 
 .blogsubtitle {
-  color: #aaa;
+  color: #999;
   display: block;
   text-align: left;
   font-size: 1.2rem;
@@ -138,12 +138,16 @@ code.inline {
 }
 
 .readtime {
-  color: #aaa;
+  color: #999;
   margin-bottom: 2rem;
+  font-size: 0.8rem;
 }
 
 @media all and (max-width: 728px) {
   .blogcontainer {
     padding: 0 16px;
+  }
+  .blogtitle {
+    font-size: 2rem;
   }
 }
