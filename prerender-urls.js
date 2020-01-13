@@ -2,6 +2,7 @@ const { generateFileList } = require('./src/crawler');
 const { join } = require('path');
 const fs = require('fs');
 const parseMD = require('parse-md').default;
+const readingTime = require('reading-time');
 
 const [blogs] = generateFileList(join(__dirname, 'content')).nodes;
 module.exports = () => {
@@ -31,6 +32,10 @@ module.exports = () => {
 		} else {
 			data = fs.readFileSync(join('content', 'blog', blog.id), 'utf-8').replace(/---(.*(\r)?\n)*---/, '');
 		}
+
+		const { text } = readingTime(data);
+		blog.details['read-time'] = text;
+
 		return {
 			url: `/blog/${blog.id}`,
 			seo: blog.details,

@@ -3,6 +3,7 @@
   width: 100%;
   margin: 0 auto 10em;
   line-height: 1.6rem;
+  padding: 0 16px;
 }
 
 .blogtitle {
@@ -75,7 +76,6 @@ code.inline {
   display: block;
   text-align: left;
   font-size: 1.2rem;
-  margin-bottom: 2rem;
 }
 
 .blogcover {
@@ -136,4 +136,9 @@ code.inline {
   height: 2px;
   border-radius: 50%;
   margin: 0 16px;
+}
+
+.readtime {
+  color: #aaa;
+  margin-bottom: 2rem;
 }

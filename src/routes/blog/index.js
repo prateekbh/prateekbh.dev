@@ -57,6 +57,7 @@ function getBlogBody(data, isLoading) {
 			<div>
 				<h1 class={style.blogtitle}>{details.title}</h1>
 				{ details.subtitle && <caption class={style.blogsubtitle}>{details.subtitle}</caption> }
+				<div class={style.readtime}>{details['read-time']}</div>
 				{ details.cover && <div class={style.blogcover} style={`background-image:url(${details.cover})`} /> }
 				<div class={style.blogbody}>
 					<Markdown options={{
