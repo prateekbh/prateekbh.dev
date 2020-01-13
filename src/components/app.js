@@ -27,7 +27,7 @@ export default class App extends Component {
 	constructor() {
 		super();
 		if (typeof window !== 'undefined') {
-			window.ga = new GAnalytics('UA-91863394-2', { aid: 1 });
+			window.ga = new GAnalytics('UA-91863394-2');
 		}
 	}
 
