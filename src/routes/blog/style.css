@@ -3,7 +3,6 @@
   width: 100%;
   margin: 0 auto 10em;
   line-height: 1.6rem;
-  padding: 0 16px;
 }
 
 .blogtitle {
@@ -141,4 +140,10 @@ code.inline {
 .readtime {
   color: #aaa;
   margin-bottom: 2rem;
+}
+
+@media all and (max-width: 728px) {
+  .blogcontainer {
+    padding: 0 16px;
+  }
 }
