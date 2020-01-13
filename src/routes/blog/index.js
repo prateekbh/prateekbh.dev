@@ -66,6 +66,9 @@ function getBlogBody(data, isLoading) {
 							},
 							code: {
 								component: CodeBlock
+							},
+							hr: {
+								component: function separator() {return <div class={style.separator}><span class={style.dots} /><span class={style.dots} /><span class={style.dots} /></div>;}
 							}
 						}
 					}}
