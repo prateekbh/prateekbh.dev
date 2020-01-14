@@ -29,6 +29,7 @@ I started with custom CSS. That was actually all what I wanted. Just some font/c
 So next step was to built the custom preview and add those target and CSS myself. However the documentation to do the same required me to write the transpiled `JSX` code by hand.
 
 e.g.
+
 ```js
 render: function() {
   var entry = this.props.entry;
