@@ -24,7 +24,7 @@ I started looking up and quickly found that Netlify CMS has a way to customize t
 
 -------
 
-I started with custom CSS. That was actually all what I wanted. Just some font/colors and size correction but it became evident pretty quickly that targeting the class names/tag names in the generated preview was not possible because nothing had specific classnames/ ids to target.
+I started with custom CSS and that was actually all what I wanted. Just some font/colors and size correction but it became evident pretty quickly that targeting the class names/tag names in the generated preview was not possible because nothing had specific classnames/ ids to target.
 
 So next step was to built the custom preview and add those target and CSS myself. However the documentation to do the same required me to write the transpiled `JSX` code by hand.
 
@@ -37,8 +37,27 @@ render: function() {
     'div',
     {},
     h('h1', {}, entry.getIn(['data', 'title'])),
-    h('img', { src: this.state.src }),
+    h('img', { src: entry.getIn(['data', 'cover']) }),
     h('div', { className: 'text' }, this.props.widgetFor('body')),
   );
 },
 ```
+
+The above code might not look super tough to read but if you need any more complex component composition this might get tough to author.
+
+## HTM to rescue.
+I ditched the manually writing `JSX` in favor of [htm](https://www.npmjs.com/package/htm). 
+HTM allows you to write `JSX` with the help of tagged templates. Thus above code simply became
+
+```js
+render: function () {
+  return(`
+    <div>
+      <h1 className='title'>${entry.getIn(['data', 'title'])}</h1>
+      <img className='cover' src='${${entry.getIn(['data', 'cover'])}}' />
+      <div className='text'>${this.props.widgetFor('body')}</div>
+    </div>
+  `);
+}
+```
+
