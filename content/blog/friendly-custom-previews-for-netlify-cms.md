@@ -61,3 +61,46 @@ render: function () {
 }
 ```
 
+Now it became much easier to write these templates and we could just add write a simple CSS and register it to be used.
+
+## Workflow
+So the following steps are all thats needed to build a custom preview for yourself.
+
+### Write a Custom preview using htm.
+I did the custom preview cod in my `admin.html` inside a simple `script type=module` tag.
+
+e.g.
+
+```html
+<script type="module">
+    import htm from 'https://unpkg.com/htm?module'
+    const html = htm.bind(h);
+    const PostPreview = createClass({
+      render: function() {
+        return (
+          html`
+            <div>
+              <h1 className='blogTitle'>${entry.getIn(['data', 'title'])}</h1>
+              <caption className='blogSubTitle'>${entry.getIn(['data', 'subtitle'])}</caption>
+              <div className='text'>${widgetFor('body')}</div>
+            </div>
+          `
+        );
+      }
+    });
+  </script>
+```
+
+**Note**: The code has to be inside `type=module` script tag as it uses native `import` method.
+
+### Register the custom preview to be used
+The above code successfully creates a custom preview but we also have to register it for a specific blog section.
+
+```js
+CMS.registerPreviewTemplate("pages", PostPreview);
+```
+
+In the above code `"pages"` represent the collection name for which this preview will be displayed. This collection name can be found inside `config.yml` for Netlify CMS.
+
+###
+
