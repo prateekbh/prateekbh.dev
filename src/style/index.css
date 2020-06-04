@@ -1,5 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Itim&text=Prateek%20Bhatnagar");
-
+@font-face {
+	font-family: "Itim";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Itim"), local("Itim-Regular"),
+		url(https://fonts.gstatic.com/l/font?kit=0nknC9ziJOYewAFKl87YXQ_K4q6U7GXWRmhRIw&skey=5906924f6c9ed948&v=v4)
+			format("woff2");
+}
 html, body {
 	height: 100%;
 	width: 100%;

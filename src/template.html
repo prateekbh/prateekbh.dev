@@ -21,7 +21,12 @@
 		<% if(htmlWebpackPlugin.options.seo && 'subtitle' in htmlWebpackPlugin.options.seo) {%>
 			<meta property="twitter:description" content="<%= htmlWebpackPlugin.options.seo.subtitle %>" />
 		<% } %>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link rel="preconnect" href="https://www.google-analytics.com" />
 		<% preact.headEnd %>
+		<% if(htmlWebpackPlugin.options.url === '/') { %>
+			<link rel="preload" href="/assets/profile.jpg" as="image"/>
+		<% } %>
 	</head>
 	<body>
 		<% preact.bodyEnd %>
