@@ -8,6 +8,7 @@
     "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
     "build": "preact build --prerenderUrls ./prerender-urls.js",
+    "postbuild": "node ./fix-headers.js",
     "dev": "preact watch --prerenderUrls ./prerender-urls.js",
     "lint": "eslint src",
     "test": "jest"
