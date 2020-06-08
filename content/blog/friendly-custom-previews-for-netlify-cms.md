@@ -46,7 +46,7 @@ render: function() {
 The above code might not look super tough to read but if you need any more complex component composition this might get tough to author.
 
 ## HTM to rescue.
-I ditched the manually writing `JSX` in favor of [htm](https://www.npmjs.com/package/htm). 
+I ditched the manually writing `JSX` in favor of [htm](https://www.npmjs.com/package/htm).
 HTM allows you to write `JSX` with the help of tagged templates. Thus above code simply became
 
 ```js
@@ -72,7 +72,7 @@ I did the custom preview cod in my `admin.html` inside a simple `script type=mod
 e.g.
 
 ```html
-<script type="module">
+< script type="module">
     import htm from 'https://unpkg.com/htm?module'
     const html = htm.bind(h);
     const PostPreview = createClass({

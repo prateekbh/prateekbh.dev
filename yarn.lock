@@ -1081,9 +1081,10 @@
     kleur "^3.0.3"
     loader-utils "^1.1.0"
 
-"@preact/prerender-data-provider@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@preact/prerender-data-provider/-/prerender-data-provider-0.0.1.tgz#6064d2a7bf1765386fc9f0a43d2ada0866159250"
+"@preact/prerender-data-provider@3.0.0-rc.9":
+  version "3.0.0-rc.9"
+  resolved "https://registry.yarnpkg.com/@preact/prerender-data-provider/-/prerender-data-provider-3.0.0-rc.9.tgz#552847d1796bbbe2917a1fe233ce2fe2f2307153"
+  integrity sha512-kMHYVTYnwgtGcEPYp0ZI79pmn30ZHUeBCDCQ/wUBvVKndLJRq0H+DkR31H/Viy4zuBqWYXAsqJtA6syqaeqUIw==
 
 "@prefresh/core@0.6.0":
   version "0.6.0"

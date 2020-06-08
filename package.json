@@ -38,7 +38,7 @@
     "webpack-bundle-analyzer": "^3.4.1"
   },
   "dependencies": {
-    "@preact/prerender-data-provider": "^0.0.1",
+    "@preact/prerender-data-provider": "3.0.0-rc.9",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "markdown-to-jsx": "^6.10.3",
