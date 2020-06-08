@@ -26,6 +26,8 @@
 		<% preact.headEnd %>
 		<% if(htmlWebpackPlugin.options.url === '/') { %>
 			<link rel="preload" href="/assets/profile.jpg" as="image"/>
+		<% } else if(htmlWebpackPlugin.options.url === '/blog/friendly-custom-previews-for-netlify-cms.md') { %>
+			<link rel="preload" href="/assets/luca-laurence-ZrqrP9Xs2vI-unsplash.jpg" as="image"/>
 		<% } %>
 	</head>
 	<body>
