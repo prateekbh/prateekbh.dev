@@ -14,28 +14,46 @@ export function FormattedCodeBlock(props) {
 	}
 	throw new Promise(resolve => {
 		let language;
-		const highlighter = import('react-syntax-highlighter/dist/esm/prism-light');
+		const highlighter = import(
+			/* webpackChunkName: "prism-light" */
+			'react-syntax-highlighter/dist/esm/prism-light'
+		);
 		let languageSyntax;
 		switch (props.class) {
 			case 'lang-js':
 				language = 'javascript';
-				languageSyntax = import('react-syntax-highlighter/dist/esm/languages/prism/javascript');
+				languageSyntax = import(
+					/* webpackChunkName: "prism-lang-js" */
+					'react-syntax-highlighter/dist/esm/languages/prism/javascript'
+				);
 				break;
 			case 'lang-html':
 				language = 'html';
-				languageSyntax = import('react-syntax-highlighter/dist/esm/languages/prism/markup');
+				languageSyntax = import(
+					/* webpackChunkName: "prism-lang-html" */
+					'react-syntax-highlighter/dist/esm/languages/prism/markup'
+				);
 				break;
 			case 'lang-css':
 				language = 'css';
-				languageSyntax = import('react-syntax-highlighter/dist/esm/languages/prism/css');
+				languageSyntax = import(
+					/* webpackChunkName: "prism-lang-css" */
+					'react-syntax-highlighter/dist/esm/languages/prism/css'
+				);
 				break;
 			case 'lang-ts':
 				language = 'typescript';
-				languageSyntax = import('react-syntax-highlighter/dist/esm/languages/prism/typescript');
+				languageSyntax = import(
+					/* webpackChunkName: "prism-lang-ts" */
+					'react-syntax-highlighter/dist/esm/languages/prism/typescript'
+				);
 				break;
 			default:
 				language = 'markdown';
-				languageSyntax = import('react-syntax-highlighter/dist/esm/languages/prism/markdown');
+				languageSyntax = import(
+					/* webpackChunkName: "prism-lang-md" */
+					'react-syntax-highlighter/dist/esm/languages/prism/markdown'
+				);
 				break;
 		}
 		Promise.all([highlighter, languageSyntax]).then(values => {

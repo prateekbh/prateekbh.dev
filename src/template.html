@@ -23,12 +23,16 @@
 		<% } %>
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link rel="preconnect" href="https://www.google-analytics.com" />
-		<% preact.headEnd %>
 		<% if(htmlWebpackPlugin.options.url === '/') { %>
 			<link rel="preload" href="/assets/profile.jpg" as="image"/>
 		<% } else if(htmlWebpackPlugin.options.url === '/blog/friendly-custom-previews-for-netlify-cms.md') { %>
 			<link rel="preload" href="/assets/luca-laurence-ZrqrP9Xs2vI-unsplash.jpg" as="image"/>
+			<% const assets = Object.keys(compilation.assets).filter(file => file.endsWith('.esm.js') && (file.startsWith('prism-light.') || file.startsWith('prism-lang-html.') || file.startsWith('prism-lang-js.') || file.startsWith('prism-lang-md.'))) %>
+			<% for (const file of assets) { %>
+				<link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="script" crossorigin="anonymous">
+			<% } %>
 		<% } %>
+		<% preact.headEnd %>
 	</head>
 	<body>
 		<% preact.bodyEnd %>
