@@ -29,7 +29,7 @@
 			<link rel="preload" href="/assets/luca-laurence-ZrqrP9Xs2vI-unsplash.jpg" as="image"/>
 			<% const assets = Object.keys(compilation.assets).filter(file => file.endsWith('.esm.js') && (file.startsWith('prism-light.') || file.startsWith('prism-lang-html.') || file.startsWith('prism-lang-js.') || file.startsWith('prism-lang-md.'))) %>
 			<% for (const file of assets) { %>
-				<link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="script" crossorigin="anonymous">
+				<link rel="preload" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="script">
 			<% } %>
 		<% } %>
 		<% preact.headEnd %>
