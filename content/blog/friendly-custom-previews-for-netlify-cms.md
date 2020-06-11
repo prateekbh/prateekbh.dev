@@ -72,6 +72,7 @@ I did the custom preview cod in my `admin.html` inside a simple `script type=mod
 e.g.
 
 ```html
+  <script type="module">
   import htm from 'https://unpkg.com/htm?module'
   const html = htm.bind(h);
   const PostPreview = createClass({
@@ -87,6 +88,7 @@ e.g.
       );
     }
   });
+  </script>
 ```
 
 **Note**: The code has to be inside `type=module` script tag as it uses native `import` method.

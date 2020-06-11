@@ -3,7 +3,12 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 
 module.exports = (config) => {
-	netlifyPlugin(config);
+	netlifyPlugin(config, {
+		mutateManifest: manifest => {
+			manifest['/blog/*'] = manifest['/blog'];
+			return manifest;
+		}
+	});
 	config.plugins.push(new ImageminPlugin({
 		from: './build/assets/**',
 		pngquant: {
