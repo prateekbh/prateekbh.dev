@@ -31,7 +31,7 @@
     "markdown": "^0.5.0",
     "parse-md": "^2.0.4",
     "per-env": "^1.0.2",
-    "preact-cli": "^3.0.0-rc.14",
+    "preact-cli": "^3.0.0-rc.16",
     "preact-render-spy": "^1.2.1",
     "react-syntax-highlighter": "^12.2.1",
     "reading-time": "^1.2.0",
