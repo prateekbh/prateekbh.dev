@@ -31,7 +31,7 @@
     "markdown": "^0.5.0",
     "parse-md": "^2.0.4",
     "per-env": "^1.0.2",
-    "preact-cli": "^3.0.0-rc.16",
+    "preact-cli": "^3.0.0-rc.17",
     "preact-render-spy": "^1.2.1",
     "react-syntax-highlighter": "^12.2.1",
     "reading-time": "^1.2.0",
@@ -43,7 +43,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "markdown-to-jsx": "^6.10.3",
     "preact": "^10.0.0",
-    "preact-cli-plugin-netlify": "^1.5.0",
+    "preact-cli-plugin-netlify": "^1.6.0",
     "preact-render-to-string": "^5.0.6",
     "preact-router": "^3.0.1"
   },
